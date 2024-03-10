@@ -31,11 +31,11 @@ struct CurrentWeather: View {
                 CurrentStatus(temp: weather.current?.tempC ?? 0, icon:isNight ? "moon.stars.fill" : "cloud.sun.fill")
                 .padding(.bottom,130)
                 HStack(spacing:20){
-                    WeatherDayView(dayOfWeek: "MON", imageName: "cloud.sun.fill", temperature: 10)
-                        WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temperature: 15)
-                        WeatherDayView(dayOfWeek: "THUR", imageName: "cloud.sun.fill", temperature: 12)
-                        WeatherDayView(dayOfWeek: "FRI", imageName: "sun.max.fill", temperature: 20)
-                        WeatherDayView(dayOfWeek: "SAT", imageName: "cloud.sun.fill", temperature: 10)
+                    WeatherDayView(dayOfWeek: "MON", imageName: "cloud.sun.fill", temperature: Int(weather.forecast?.forecastday?[0].day?.avgtempC ?? 0))
+                        WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temperature: Int(weather.forecast?.forecastday?[1].day?.avgtempC ?? 0))
+                        WeatherDayView(dayOfWeek: "THUR", imageName: "cloud.sun.fill", temperature: Int(weather.forecast?.forecastday?[2].day?.avgtempC ?? 0))
+                        WeatherDayView(dayOfWeek: "FRI", imageName: "sun.max.fill", temperature: Int(weather.forecast?.forecastday?[3].day?.avgtempC ?? 0))
+                        WeatherDayView(dayOfWeek: "SAT", imageName: "cloud.sun.fill", temperature: Int(weather.forecast?.forecastday?[4].day?.avgtempC ?? 0))
                 }
                     Spacer()
                 Button{
@@ -87,10 +87,6 @@ struct WeatherDayView: View {
 struct BackgroundView: View {
     var isNight:Bool
     var body: some View {
-//        LinearGradient(gradient: Gradient(colors: [isNight ? .black : .blue , isNight ? .gray : .lightBlue]),
-//                       startPoint: .topLeading,
-//                       endPoint: .bottomLeading)
-//        .ignoresSafeArea()
         ContainerRelativeShape()
             .fill(isNight ? Color.black.gradient : Color.blue.gradient)
             .ignoresSafeArea()

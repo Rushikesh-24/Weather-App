@@ -15,7 +15,7 @@ final class WeatherViewModel: ObservableObject {
         do{
             let weather = try await WebService.getWeather(city:city)
             self.weather = weather
-//            print(weather)
+            print(weather)
         } catch (let error){
             print(error.localizedDescription)
         }

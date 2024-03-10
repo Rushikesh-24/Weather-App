@@ -102,6 +102,7 @@
 		D138AAD52B9C3DEF000EB9ED /* Weather App */ = {
 			isa = PBXGroup;
 			children = (
+				D17310DB2B9D620B00FB96C8 /* Forecast */,
 				D138AAD62B9C3DEF000EB9ED /* Weather_AppApp.swift */,
 				D138AAD82B9C3DEF000EB9ED /* CurrentWeather.swift */,
 				D18D03522B9C72D30065CEBA /* CurrentWeather */,
@@ -135,6 +136,13 @@
 				D138AAF32B9C3DF0000EB9ED /* Weather_AppUITestsLaunchTests.swift */,
 			);
 			path = "Weather AppUITests";
+			sourceTree = "<group>";
+		};
+		D17310DB2B9D620B00FB96C8 /* Forecast */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Forecast;
 			sourceTree = "<group>";
 		};
 		D18D03522B9C72D30065CEBA /* CurrentWeather */ = {
